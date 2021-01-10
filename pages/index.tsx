@@ -1,16 +1,15 @@
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import styles from '../styles/Home.module.css';
-
+import { Button } from '@material-ui/core';
 export default function Home(): ReactElement {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Support Panel</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <h1>Support Panel</h1>
       </main>
     </div>
