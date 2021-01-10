@@ -1,8 +1,14 @@
-import { ReactElement } from 'react';
-import '../styles/globals.css';
+import { Provider } from 'react-redux';
+import configureApp from 'app/core/configs/configure-app';
 
-function MyApp({ Component, pageProps }): ReactElement {
-  return <Component {...pageProps} />;
+export const { store } = configureApp();
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
 export default MyApp;
