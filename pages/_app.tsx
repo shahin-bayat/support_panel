@@ -6,6 +6,9 @@ import { ChakraProvider } from '@chakra-ui/react';
 import messages from 'app/translations/fa.json';
 export const { store, theme } = configureApp();
 
+import 'app/assets/fonts/fontiran.css';
+import 'styles/main.scss';
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
