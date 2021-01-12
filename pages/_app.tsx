@@ -1,18 +1,22 @@
 import { Provider } from 'react-redux';
+import Head from 'next/head';
 import configureApp from 'app/core/configs/configure-app';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export const { store, theme } = configureApp();
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
+    <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <Provider store={store}>
+        <ChakraProvider theme={theme} resetCSS={true}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </Provider>
+    </>
   );
 }
 

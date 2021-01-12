@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import { Button } from '@material-ui/core';
+import { Button } from '@chakra-ui/react';
 export default function Home(): ReactElement {
   return (
     <div>
@@ -11,6 +11,7 @@ export default function Home(): ReactElement {
 
       <main>
         <h1>Support Panel</h1>
+        <Button colorScheme="teal">Test Button</Button>
       </main>
     </div>
   );
