@@ -11,7 +11,6 @@ export default function Home(): ReactElement {
 
       <main>
         <h1>Support Panel</h1>
-        <Button colorScheme="teal">Test Button</Button>
       </main>
     </div>
   );

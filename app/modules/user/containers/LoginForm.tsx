@@ -1,9 +1,11 @@
 import { ReactElement } from 'react';
+import { useIntl } from 'react-intl';
 import { useForm } from 'react-hook-form';
 import { Input, FormControl, FormLabel, FormErrorMessage, FormHelperText, Box, Button } from '@chakra-ui/react';
 
 export default function LoginForm(): ReactElement {
   const { handleSubmit, errors, register, formState } = useForm();
+  const intl = useIntl();
 
   function validateOtp(value) {
     if (!value) {
@@ -20,7 +22,7 @@ export default function LoginForm(): ReactElement {
     <Box my="auto">
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.otp} id="otp">
-          <FormLabel htmlFor="otp">Enter OTP</FormLabel>
+          <FormLabel htmlFor="otp">{intl.formatMessage({ id: 'user.otp' })}</FormLabel>
           <Input type="number" name="otp" ref={register({ validate: validateOtp })} />
           <FormErrorMessage>{errors.otp && errors.otp.message}</FormErrorMessage>
           <FormHelperText>This is a helper text</FormHelperText>
